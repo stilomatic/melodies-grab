@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A63D5EC21D73177B00ACD42E /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */; };
+		A63D5EC71D73181B00ACD42E /* CustomSlideInSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC41D73181B00ACD42E /* CustomSlideInSegue.m */; };
+		A63D5EC81D73181B00ACD42E /* CustomSlideOutSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC61D73181B00ACD42E /* CustomSlideOutSegue.m */; };
+		A63D5ECC1D73377E00ACD42E /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5ECB1D73377E00ACD42E /* FileManager.m */; };
+		A63D5ECF1D73640400ACD42E /* FileViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A63D5ECE1D73640400ACD42E /* FileViewController.mm */; };
+		A6403F5D1D71880C00C525AC /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F5C1D71880C00C525AC /* main.mm */; };
+		A6403F601D71880C00C525AC /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F5F1D71880C00C525AC /* AppDelegate.mm */; };
+		A6403F631D71880C00C525AC /* GrabViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F621D71880C00C525AC /* GrabViewController.mm */; };
+		A6403F661D71880C00C525AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6403F641D71880C00C525AC /* Main.storyboard */; };
+		A6403F681D71880C00C525AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6403F671D71880C00C525AC /* Assets.xcassets */; };
+		A6403F6B1D71880C00C525AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6403F691D71880C00C525AC /* LaunchScreen.storyboard */; };
+		A6403F761D71880C00C525AC /* FFTVisualsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6403F751D71880C00C525AC /* FFTVisualsUITests.m */; };
+		A6403F811D718AC400C525AC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403F801D718AC400C525AC /* Accelerate.framework */; };
+		A6403F891D718BB500C525AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403F881D718BB500C525AC /* AudioToolbox.framework */; };
+		A6403F8B1D718BBE00C525AC /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403F8A1D718BBE00C525AC /* CoreAudio.framework */; };
+		A6403F971D71942400C525AC /* FFTHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F961D71942400C525AC /* FFTHelper.mm */; };
+		A6403F9A1D7195D300C525AC /* ASAudioUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F991D7195D300C525AC /* ASAudioUnit.mm */; };
+		A6403F9C1D71A4B600C525AC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403F9B1D71A4B600C525AC /* OpenGLES.framework */; };
+		A6403F9E1D71A4C000C525AC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403F9D1D71A4C000C525AC /* MediaPlayer.framework */; };
+		A6403FA01D71A4D000C525AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403F9F1D71A4D000C525AC /* CoreGraphics.framework */; };
+		A6403FA21D71A4D900C525AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403FA11D71A4D900C525AC /* UIKit.framework */; };
+		A6403FA41D71A4E200C525AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6403FA31D71A4E200C525AC /* Foundation.framework */; };
+		A6403FAA1D71A55D00C525AC /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403FA71D71A55D00C525AC /* mo_audio.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A6403FAB1D71A55D00C525AC /* mo_gfx.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403FA91D71A55D00C525AC /* mo_gfx.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A6403FAE1D71B81B00C525AC /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = A6403FAD1D71B81B00C525AC /* Graph.m */; };
+		A6403FB11D71B82C00C525AC /* Spektrum.m in Sources */ = {isa = PBXBuildFile; fileRef = A6403FB01D71B82C00C525AC /* Spektrum.m */; };
+		A6403FB51D71C0B700C525AC /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6403FB41D71C0B700C525AC /* Converter.m */; };
+		A65C36401D7432130055E9B2 /* PlayerProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C363F1D7432130055E9B2 /* PlayerProgress.m */; };
+		A6B8B71A1D745434009F6668 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B8B7191D745434009F6668 /* AVFoundation.framework */; };
+		A6EB97C01D7C60AD00E2E0CA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EB97BF1D7C60AD00E2E0CA /* CoreMIDI.framework */; };
+		A95ABF496A1327D3402D4576 /* libPods-melodies grab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 504986BE03A0ACFEADB64DCF /* libPods-melodies grab.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6403F721D71880C00C525AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6403F501D71880B00C525AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6403F571D71880B00C525AC;
+			remoteInfo = FFTVisuals;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4DA13F15D054B315084AA088 /* Pods-melodies grab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-melodies grab.release.xcconfig"; path = "../Pods/Target Support Files/Pods-melodies grab/Pods-melodies grab.release.xcconfig"; sourceTree = "<group>"; };
+		504986BE03A0ACFEADB64DCF /* libPods-melodies grab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-melodies grab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A63D5EC01D73177B00ACD42E /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
+		A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
+		A63D5EC31D73181B00ACD42E /* CustomSlideInSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideInSegue.h; sourceTree = "<group>"; };
+		A63D5EC41D73181B00ACD42E /* CustomSlideInSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideInSegue.m; sourceTree = "<group>"; };
+		A63D5EC51D73181B00ACD42E /* CustomSlideOutSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideOutSegue.h; sourceTree = "<group>"; };
+		A63D5EC61D73181B00ACD42E /* CustomSlideOutSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideOutSegue.m; sourceTree = "<group>"; };
+		A63D5ECA1D73377E00ACD42E /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		A63D5ECB1D73377E00ACD42E /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		A63D5ECD1D73640400ACD42E /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		A63D5ECE1D73640400ACD42E /* FileViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FileViewController.mm; sourceTree = "<group>"; };
+		A6403F581D71880B00C525AC /* melodies grab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "melodies grab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6403F5C1D71880C00C525AC /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		A6403F5E1D71880C00C525AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6403F5F1D71880C00C525AC /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		A6403F611D71880C00C525AC /* GrabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrabViewController.h; sourceTree = "<group>"; };
+		A6403F621D71880C00C525AC /* GrabViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GrabViewController.mm; sourceTree = "<group>"; };
+		A6403F651D71880C00C525AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6403F671D71880C00C525AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6403F6A1D71880C00C525AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6403F6C1D71880C00C525AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6403F711D71880C00C525AC /* FFTVisualsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFTVisualsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6403F751D71880C00C525AC /* FFTVisualsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFTVisualsUITests.m; sourceTree = "<group>"; };
+		A6403F771D71880C00C525AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6403F801D718AC400C525AC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A6403F881D718BB500C525AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A6403F8A1D718BBE00C525AC /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A6403F951D71942400C525AC /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		A6403F961D71942400C525AC /* FFTHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFTHelper.mm; sourceTree = "<group>"; };
+		A6403F981D7195D300C525AC /* ASAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASAudioUnit.h; sourceTree = "<group>"; };
+		A6403F991D7195D300C525AC /* ASAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ASAudioUnit.mm; sourceTree = "<group>"; };
+		A6403F9B1D71A4B600C525AC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A6403F9D1D71A4C000C525AC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A6403F9F1D71A4D000C525AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A6403FA11D71A4D900C525AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A6403FA31D71A4E200C525AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A6403FA51D71A55D00C525AC /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
+		A6403FA61D71A55D00C525AC /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_audio.h; sourceTree = "<group>"; };
+		A6403FA71D71A55D00C525AC /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
+		A6403FA81D71A55D00C525AC /* mo_gfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_gfx.h; sourceTree = "<group>"; };
+		A6403FA91D71A55D00C525AC /* mo_gfx.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_gfx.mm; sourceTree = "<group>"; };
+		A6403FAC1D71B81B00C525AC /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		A6403FAD1D71B81B00C525AC /* Graph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph.m; sourceTree = "<group>"; };
+		A6403FAF1D71B82C00C525AC /* Spektrum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spektrum.h; sourceTree = "<group>"; };
+		A6403FB01D71B82C00C525AC /* Spektrum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spektrum.m; sourceTree = "<group>"; };
+		A6403FB21D71B8E000C525AC /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		A6403FB31D71C0B700C525AC /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
+		A6403FB41D71C0B700C525AC /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
+		A65C363E1D7432130055E9B2 /* PlayerProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerProgress.h; sourceTree = "<group>"; };
+		A65C363F1D7432130055E9B2 /* PlayerProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerProgress.m; sourceTree = "<group>"; };
+		A6B8B7191D745434009F6668 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A6EB97BF1D7C60AD00E2E0CA /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		AA6B9C23EDB3854137001B95 /* Pods-melodies grab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-melodies grab.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-melodies grab/Pods-melodies grab.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6403F551D71880B00C525AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6EB97C01D7C60AD00E2E0CA /* CoreMIDI.framework in Frameworks */,
+				A6B8B71A1D745434009F6668 /* AVFoundation.framework in Frameworks */,
+				A6403FA41D71A4E200C525AC /* Foundation.framework in Frameworks */,
+				A6403FA21D71A4D900C525AC /* UIKit.framework in Frameworks */,
+				A6403FA01D71A4D000C525AC /* CoreGraphics.framework in Frameworks */,
+				A6403F9E1D71A4C000C525AC /* MediaPlayer.framework in Frameworks */,
+				A6403F9C1D71A4B600C525AC /* OpenGLES.framework in Frameworks */,
+				A6403F8B1D718BBE00C525AC /* CoreAudio.framework in Frameworks */,
+				A6403F891D718BB500C525AC /* AudioToolbox.framework in Frameworks */,
+				A6403F811D718AC400C525AC /* Accelerate.framework in Frameworks */,
+				A95ABF496A1327D3402D4576 /* libPods-melodies grab.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6403F6E1D71880C00C525AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A63D5EBE1D73172F00ACD42E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6403FAC1D71B81B00C525AC /* Graph.h */,
+				A6403FAD1D71B81B00C525AC /* Graph.m */,
+				A6403FAF1D71B82C00C525AC /* Spektrum.h */,
+				A6403FB01D71B82C00C525AC /* Spektrum.m */,
+				A65C363E1D7432130055E9B2 /* PlayerProgress.h */,
+				A65C363F1D7432130055E9B2 /* PlayerProgress.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A63D5EBF1D73173B00ACD42E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6403F611D71880C00C525AC /* GrabViewController.h */,
+				A6403F621D71880C00C525AC /* GrabViewController.mm */,
+				A63D5EC01D73177B00ACD42E /* FilesTableViewController.h */,
+				A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */,
+				A63D5ECD1D73640400ACD42E /* FileViewController.h */,
+				A63D5ECE1D73640400ACD42E /* FileViewController.mm */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A63D5EC91D731C0700ACD42E /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				A63D5EC31D73181B00ACD42E /* CustomSlideInSegue.h */,
+				A63D5EC41D73181B00ACD42E /* CustomSlideInSegue.m */,
+				A63D5EC51D73181B00ACD42E /* CustomSlideOutSegue.h */,
+				A63D5EC61D73181B00ACD42E /* CustomSlideOutSegue.m */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
+		A6403F4F1D71880B00C525AC = {
+			isa = PBXGroup;
+			children = (
+				A6403F5A1D71880B00C525AC /* FFTVisuals */,
+				A6403F741D71880C00C525AC /* FFTVisualsUITests */,
+				A6403F591D71880B00C525AC /* Products */,
+				CF53E2E49A0A5FD2A817A19F /* Frameworks */,
+				AE3371597493BE5107497B8C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		A6403F591D71880B00C525AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6403F581D71880B00C525AC /* melodies grab.app */,
+				A6403F711D71880C00C525AC /* FFTVisualsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6403F5A1D71880B00C525AC /* FFTVisuals */ = {
+			isa = PBXGroup;
+			children = (
+				A6403F841D718B6800C525AC /* Audio */,
+				A6403F831D718ADD00C525AC /* Utils */,
+				A6403F821D718ACF00C525AC /* UI */,
+				A6403F5E1D71880C00C525AC /* AppDelegate.h */,
+				A6403F5F1D71880C00C525AC /* AppDelegate.mm */,
+				A6403FB21D71B8E000C525AC /* Global.h */,
+				A6403F641D71880C00C525AC /* Main.storyboard */,
+				A6403F671D71880C00C525AC /* Assets.xcassets */,
+				A6403F691D71880C00C525AC /* LaunchScreen.storyboard */,
+				A6403F6C1D71880C00C525AC /* Info.plist */,
+				A6403F5B1D71880B00C525AC /* Supporting Files */,
+			);
+			path = FFTVisuals;
+			sourceTree = "<group>";
+		};
+		A6403F5B1D71880B00C525AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6403F5C1D71880C00C525AC /* main.mm */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6403F741D71880C00C525AC /* FFTVisualsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A6403FA31D71A4E200C525AC /* Foundation.framework */,
+				A6403FA11D71A4D900C525AC /* UIKit.framework */,
+				A6403F9F1D71A4D000C525AC /* CoreGraphics.framework */,
+				A6403F9D1D71A4C000C525AC /* MediaPlayer.framework */,
+				A6403F9B1D71A4B600C525AC /* OpenGLES.framework */,
+				A6403F751D71880C00C525AC /* FFTVisualsUITests.m */,
+				A6403F771D71880C00C525AC /* Info.plist */,
+			);
+			path = FFTVisualsUITests;
+			sourceTree = "<group>";
+		};
+		A6403F821D718ACF00C525AC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A63D5EBF1D73173B00ACD42E /* Controllers */,
+				A63D5EBE1D73172F00ACD42E /* Views */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A6403F831D718ADD00C525AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A63D5EC91D731C0700ACD42E /* Segues */,
+				A6403FB31D71C0B700C525AC /* Converter.h */,
+				A6403FB41D71C0B700C525AC /* Converter.m */,
+				A63D5ECA1D73377E00ACD42E /* FileManager.h */,
+				A63D5ECB1D73377E00ACD42E /* FileManager.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		A6403F841D718B6800C525AC /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A6481FCD1D7C4C6F003B08ED /* Vendor */,
+				A6403F951D71942400C525AC /* FFTHelper.h */,
+				A6403F961D71942400C525AC /* FFTHelper.mm */,
+				A6403F981D7195D300C525AC /* ASAudioUnit.h */,
+				A6403F991D7195D300C525AC /* ASAudioUnit.mm */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		A6403F941D7193F600C525AC /* momu source */ = {
+			isa = PBXGroup;
+			children = (
+				A6403FA51D71A55D00C525AC /* mo_def.h */,
+				A6403FA61D71A55D00C525AC /* mo_audio.h */,
+				A6403FA71D71A55D00C525AC /* mo_audio.mm */,
+				A6403FA81D71A55D00C525AC /* mo_gfx.h */,
+				A6403FA91D71A55D00C525AC /* mo_gfx.mm */,
+			);
+			name = "momu source";
+			sourceTree = "<group>";
+		};
+		A6481FCD1D7C4C6F003B08ED /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				A6403F941D7193F600C525AC /* momu source */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		AE3371597493BE5107497B8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA6B9C23EDB3854137001B95 /* Pods-melodies grab.debug.xcconfig */,
+				4DA13F15D054B315084AA088 /* Pods-melodies grab.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF53E2E49A0A5FD2A817A19F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6B8B7191D745434009F6668 /* AVFoundation.framework */,
+				A6403F8A1D718BBE00C525AC /* CoreAudio.framework */,
+				A6403F881D718BB500C525AC /* AudioToolbox.framework */,
+				A6403F801D718AC400C525AC /* Accelerate.framework */,
+				A6EB97BF1D7C60AD00E2E0CA /* CoreMIDI.framework */,
+				504986BE03A0ACFEADB64DCF /* libPods-melodies grab.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6403F571D71880B00C525AC /* melodies grab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6403F7A1D71880C00C525AC /* Build configuration list for PBXNativeTarget "melodies grab" */;
+			buildPhases = (
+				96B4BF7F22C8EFCA7E8ABD10 /* [CP] Check Pods Manifest.lock */,
+				A6403F541D71880B00C525AC /* Sources */,
+				A6403F551D71880B00C525AC /* Frameworks */,
+				A6403F561D71880B00C525AC /* Resources */,
+				5B36085F6EE9B611C85078D7 /* [CP] Embed Pods Frameworks */,
+				B459F5F119EAA573D78EF4E9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "melodies grab";
+			productName = FFTVisuals;
+			productReference = A6403F581D71880B00C525AC /* melodies grab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6403F701D71880C00C525AC /* FFTVisualsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6403F7D1D71880C00C525AC /* Build configuration list for PBXNativeTarget "FFTVisualsUITests" */;
+			buildPhases = (
+				A6403F6D1D71880C00C525AC /* Sources */,
+				A6403F6E1D71880C00C525AC /* Frameworks */,
+				A6403F6F1D71880C00C525AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6403F731D71880C00C525AC /* PBXTargetDependency */,
+			);
+			name = FFTVisualsUITests;
+			productName = FFTVisualsUITests;
+			productReference = A6403F711D71880C00C525AC /* FFTVisualsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6403F501D71880B00C525AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = AntonioStilo;
+				TargetAttributes = {
+					A6403F571D71880B00C525AC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A6403F701D71880C00C525AC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A6403F571D71880B00C525AC;
+					};
+				};
+			};
+			buildConfigurationList = A6403F531D71880B00C525AC /* Build configuration list for PBXProject "FFTVisuals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6403F4F1D71880B00C525AC;
+			productRefGroup = A6403F591D71880B00C525AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6403F571D71880B00C525AC /* melodies grab */,
+				A6403F701D71880C00C525AC /* FFTVisualsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6403F561D71880B00C525AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6403F6B1D71880C00C525AC /* LaunchScreen.storyboard in Resources */,
+				A6403F681D71880C00C525AC /* Assets.xcassets in Resources */,
+				A6403F661D71880C00C525AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6403F6F1D71880C00C525AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B36085F6EE9B611C85078D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-melodies grab/Pods-melodies grab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96B4BF7F22C8EFCA7E8ABD10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B459F5F119EAA573D78EF4E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-melodies grab/Pods-melodies grab-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6403F541D71880B00C525AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6403FB51D71C0B700C525AC /* Converter.m in Sources */,
+				A6403FB11D71B82C00C525AC /* Spektrum.m in Sources */,
+				A6403FAA1D71A55D00C525AC /* mo_audio.mm in Sources */,
+				A6403F971D71942400C525AC /* FFTHelper.mm in Sources */,
+				A6403F631D71880C00C525AC /* GrabViewController.mm in Sources */,
+				A63D5ECC1D73377E00ACD42E /* FileManager.m in Sources */,
+				A6403F601D71880C00C525AC /* AppDelegate.mm in Sources */,
+				A6403FAE1D71B81B00C525AC /* Graph.m in Sources */,
+				A63D5EC81D73181B00ACD42E /* CustomSlideOutSegue.m in Sources */,
+				A65C36401D7432130055E9B2 /* PlayerProgress.m in Sources */,
+				A63D5EC71D73181B00ACD42E /* CustomSlideInSegue.m in Sources */,
+				A63D5EC21D73177B00ACD42E /* FilesTableViewController.m in Sources */,
+				A6403FAB1D71A55D00C525AC /* mo_gfx.mm in Sources */,
+				A63D5ECF1D73640400ACD42E /* FileViewController.mm in Sources */,
+				A6403F9A1D7195D300C525AC /* ASAudioUnit.mm in Sources */,
+				A6403F5D1D71880C00C525AC /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6403F6D1D71880C00C525AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6403F761D71880C00C525AC /* FFTVisualsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6403F731D71880C00C525AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6403F571D71880B00C525AC /* melodies grab */;
+			targetProxy = A6403F721D71880C00C525AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6403F641D71880C00C525AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6403F651D71880C00C525AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6403F691D71880C00C525AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6403F6A1D71880C00C525AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6403F781D71880C00C525AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A6403F791D71880C00C525AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6403F7B1D71880C00C525AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA6B9C23EDB3854137001B95 /* Pods-melodies grab.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FFTVisuals/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stilo-studio.melodies";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6403F7C1D71880C00C525AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DA13F15D054B315084AA088 /* Pods-melodies grab.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FFTVisuals/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stilo-studio.melodies";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A6403F7E1D71880C00C525AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FFTVisualsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stilo-studio.FFTVisualsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FFTVisuals;
+			};
+			name = Debug;
+		};
+		A6403F7F1D71880C00C525AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FFTVisualsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stilo-studio.FFTVisualsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FFTVisuals;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6403F531D71880B00C525AC /* Build configuration list for PBXProject "FFTVisuals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6403F781D71880C00C525AC /* Debug */,
+				A6403F791D71880C00C525AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6403F7A1D71880C00C525AC /* Build configuration list for PBXNativeTarget "melodies grab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6403F7B1D71880C00C525AC /* Debug */,
+				A6403F7C1D71880C00C525AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6403F7D1D71880C00C525AC /* Build configuration list for PBXNativeTarget "FFTVisualsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6403F7E1D71880C00C525AC /* Debug */,
+				A6403F7F1D71880C00C525AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6403F501D71880B00C525AC /* Project object */;
+}
