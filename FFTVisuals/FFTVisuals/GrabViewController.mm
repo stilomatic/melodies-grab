@@ -116,7 +116,7 @@
 -(void)getNote:(float)freq
 {
     self.frequencyLabel.text = [NSString stringWithFormat:@"tap to stop\n%1.2fHz\n=",freq];
-    int midiNote = [Converter midi:freq];
+    uint8_t midiNote = [Converter midi:freq];
     NSLog(@"MIDI NOTE::: %ld",(long)midiNote);
     self.noteLabel.text = [Converter note:midiNote];
     [self.graph update:freq];

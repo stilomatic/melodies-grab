@@ -101,7 +101,7 @@
     
     [self.audioProgressTimer invalidate];
     self.audioProgressTimer = nil;
-    [self.progresAudioView setPercent:100 ];
+    [self.progresAudioView setPercent:100];
     [self.progresAudioView setNeedsDisplay];
     [self.audioPlayer stop];
 }

@@ -11,6 +11,6 @@
 @interface Converter : NSObject
 
 +(NSString*)note:(NSInteger)midi;
-+(int)midi:(float)freq;
++(uint8_t)midi:(float)freq;
 
 @end
