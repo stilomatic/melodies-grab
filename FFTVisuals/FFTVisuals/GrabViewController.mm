@@ -124,7 +124,7 @@
     NSLog(@"MIDI NOTE::: %ld",(long)midiNote);
     self.noteLabel.text = [Converter note:midiNote];
     [self.graph update:freq];
-    MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:127 duration:0.5 channel:0];
+    MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:127 duration:0.7 channel:0];
     [self.currentTrack addEvent:note];
     self.noteCount++;
 }

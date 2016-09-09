@@ -104,12 +104,13 @@
     NSFileManager *fm = [NSFileManager defaultManager];
     BOOL isAudioDeleted = [fm removeItemAtPath:[dictionary valueForKey:kMetaDataAUDIOFile] error:&error];
     BOOL isMetaDeleted = [fm removeItemAtPath:[dictionary valueForKey:kMetaDataMETAFile] error:&error];
+    BOOL isMIDIDeleted = [fm removeItemAtPath:[dictionary valueForKey:kMetaDataMIDIFile] error:&error];
     
     if(error){
         NSLog(@"Error while deleting files %@",error.description);
     }
     
-    return isAudioDeleted && isMetaDeleted;
+    return isAudioDeleted && isMetaDeleted && isMIDIDeleted;
 
 }
 
