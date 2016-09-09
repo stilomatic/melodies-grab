@@ -150,11 +150,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDO-lE-key">
-                                <rect key="frame" x="315" y="87" width="285" height="513"/>
+                                <rect key="frame" x="315" y="87" width="285" height="438"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="285" id="UHJ-om-tuH"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="MIDI PLAY">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -174,7 +175,7 @@
                             <constraint firstItem="eDO-lE-key" firstAttribute="top" secondItem="wWy-Hy-IE2" secondAttribute="bottom" constant="8" symbolic="YES" id="AfC-WH-vnS"/>
                             <constraint firstItem="wLg-T9-tNX" firstAttribute="bottom" secondItem="kmA-4d-MoB" secondAttribute="top" id="B9O-VE-BUi"/>
                             <constraint firstItem="tcZ-Tw-kxA" firstAttribute="leading" secondItem="TfR-rs-VZv" secondAttribute="leadingMargin" constant="-13" id="GgH-0k-2Y2"/>
-                            <constraint firstItem="eDO-lE-key" firstAttribute="baseline" secondItem="wLg-T9-tNX" secondAttribute="baseline" id="Q1s-wR-FU2"/>
+                            <constraint firstItem="eDO-lE-key" firstAttribute="baseline" secondItem="wLg-T9-tNX" secondAttribute="baseline" constant="230" id="Q1s-wR-FU2"/>
                             <constraint firstItem="aAe-0H-9fN" firstAttribute="top" secondItem="wWy-Hy-IE2" secondAttribute="top" id="RxL-vJ-AYH"/>
                             <constraint firstItem="wWy-Hy-IE2" firstAttribute="leading" secondItem="aAe-0H-9fN" secondAttribute="trailing" constant="8" symbolic="YES" id="Tjh-z7-ALu"/>
                             <constraint firstItem="eDO-lE-key" firstAttribute="leading" secondItem="wLg-T9-tNX" secondAttribute="trailing" constant="8" symbolic="YES" id="X2w-6x-vY6"/>
@@ -182,11 +183,17 @@
                             <constraint firstItem="wLg-T9-tNX" firstAttribute="top" secondItem="tcZ-Tw-kxA" secondAttribute="bottom" constant="28" id="dQ7-M1-tXR"/>
                             <constraint firstItem="aAe-0H-9fN" firstAttribute="top" secondItem="TfR-rs-VZv" secondAttribute="top" id="f5B-5N-jVR"/>
                             <constraint firstAttribute="trailing" secondItem="eDO-lE-key" secondAttribute="trailing" id="izZ-VG-PMK"/>
+                            <constraint firstItem="kmA-4d-MoB" firstAttribute="top" secondItem="eDO-lE-key" secondAttribute="bottom" constant="75" id="snJ-1s-cfV"/>
                             <constraint firstItem="wLg-T9-tNX" firstAttribute="top" secondItem="eDO-lE-key" secondAttribute="top" id="svY-9j-MEc"/>
                             <constraint firstItem="aAe-0H-9fN" firstAttribute="leading" secondItem="tcZ-Tw-kxA" secondAttribute="trailing" constant="8" symbolic="YES" id="vCJ-Ur-REi"/>
-                            <constraint firstItem="eDO-lE-key" firstAttribute="firstBaseline" secondItem="wLg-T9-tNX" secondAttribute="firstBaseline" id="wMD-v9-fQO"/>
+                            <constraint firstItem="eDO-lE-key" firstAttribute="firstBaseline" secondItem="wLg-T9-tNX" secondAttribute="firstBaseline" constant="208" id="wMD-v9-fQO"/>
                             <constraint firstItem="wLg-T9-tNX" firstAttribute="leading" secondItem="TfR-rs-VZv" secondAttribute="leading" id="yPs-iz-lwU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="b8I-DP-9Sd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="audioPlayBtn" destination="wLg-T9-tNX" id="k0k-Nb-kqN"/>

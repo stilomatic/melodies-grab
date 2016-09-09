@@ -14,8 +14,10 @@
 #import "Global.h"
 #import "MIDIGraph.h"
 #import <MIKMIDI.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface FileViewController()<UITextFieldDelegate>
+@interface FileViewController()<UITextFieldDelegate,MFMailComposeViewControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic,strong) PlayerProgress *progresAudioView;
 @property (nonatomic,strong) IBOutlet UIButton *audioPlayBtn;
@@ -37,6 +39,8 @@
 -(void)playMIDIFile;
 -(void)stopMIDIFile;
 
+-(void)shareBtnHandler;
+
 @end
 
 @implementation FileViewController
@@ -47,7 +51,6 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
-   // self.view.translatesAutoresizingMaskIntoConstraints = NO;
     self.isPlayingAudio = NO;
     self.isPlayingMIDI = NO;
     
@@ -74,7 +77,6 @@
 
     [self.midiPlayBtn setTitle:@"PLAY MIDI" forState:UIControlStateNormal];
     [self.midiPlayBtn addTarget:self action:@selector(midiPlayHandler) forControlEvents:UIControlEventTouchUpInside];
-    //[self.view bringSubviewToFront:self.midiPlayBtn];
     
     self.graph = [[MIDIGraph alloc] initWithFrame:CGRectMake((self.view.bounds.size.width * 0.5)+(((self.view.bounds.size.width * 0.5) - 260)/2), 80, 260, 260)];
     [self.view addSubview:self.graph];
@@ -85,6 +87,13 @@
     MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
     MIKMIDITrack *currentTrack = [sequence.tracks firstObject];
     [self.graph update:currentTrack.events];
+    
+    UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(self.view.bounds.size.width * 0.5, self.view.bounds.size.height - 44, self.view.bounds.size.width * 05, 44);
+    shareBtn.backgroundColor = UIRandomColor;
+    [shareBtn setTitle:@"share" forState:UIControlStateNormal];
+    [shareBtn addTarget:self action:@selector(shareBtnHandler) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareBtn];
 
 }
 
@@ -166,9 +175,8 @@
     NSURL *file = [NSURL fileURLWithPath:self.metadata[kMetaDataMIDIFile]];
     NSError *error = nil;
     MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
-     MusicTimeStamp endTime =  sequence.length;
     self.sequencer = [MIKMIDISequencer sequencerWithSequence:sequence];
-    [self.sequencer setLoopStartTimeStamp:0 endTimeStamp:endTime];
+    [self.sequencer setLoopStartTimeStamp:0 endTimeStamp:sequence.tracks.firstObject.events.count];
     [self.sequencer startPlayback];
 }
 
@@ -178,9 +186,24 @@
     self.sequencer = nil;
 }
 
+-(void)shareBtnHandler
+{
+    NSData *wavData = [NSData dataWithContentsOfFile:self.metadata[kMetaDataAUDIOFile]];
+    NSData *midiData = [NSData dataWithContentsOfFile:self.metadata[kMetaDataMIDIFile]];
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    [mailController setSubject:self.metadata[kMetaDataTitle]];
+    [mailController setMessageBody:@"This file was generated using iPhone App melodies-grabber"
+                             isHTML:NO];
+    [mailController addAttachmentData:midiData mimeType:@"audio/midi" fileName:[NSString stringWithFormat:@"%@.mid",self.metadata[kMetaDataTitle]]];
+    [mailController addAttachmentData:wavData mimeType:@"audio/wav" fileName:[NSString stringWithFormat:@"%@.wav",self.metadata[kMetaDataTitle]]];
+    mailController.mailComposeDelegate = self;
+    [self presentViewController:mailController animated:YES completion:NULL];
 
+}
 
-
-
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 @end

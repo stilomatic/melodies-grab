@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A62EDBB81D82F79F00CFF078 /* MIDIGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A62EDBB71D82F79F00CFF078 /* MIDIGraph.m */; };
+		A62EDBBA1D830F1600CFF078 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62EDBB91D830F1600CFF078 /* MessageUI.framework */; };
 		A63D5EC21D73177B00ACD42E /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */; };
 		A63D5EC71D73181B00ACD42E /* CustomSlideInSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC41D73181B00ACD42E /* CustomSlideInSegue.m */; };
 		A63D5EC81D73181B00ACD42E /* CustomSlideOutSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC61D73181B00ACD42E /* CustomSlideOutSegue.m */; };
@@ -56,6 +57,7 @@
 		504986BE03A0ACFEADB64DCF /* libPods-melodies grab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-melodies grab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62EDBB61D82F79F00CFF078 /* MIDIGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIGraph.h; sourceTree = "<group>"; };
 		A62EDBB71D82F79F00CFF078 /* MIDIGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIGraph.m; sourceTree = "<group>"; };
+		A62EDBB91D830F1600CFF078 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A63D5EC01D73177B00ACD42E /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
 		A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
 		A63D5EC31D73181B00ACD42E /* CustomSlideInSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideInSegue.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62EDBBA1D830F1600CFF078 /* MessageUI.framework in Frameworks */,
 				A6EB97C01D7C60AD00E2E0CA /* CoreMIDI.framework in Frameworks */,
 				A6B8B71A1D745434009F6668 /* AVFoundation.framework in Frameworks */,
 				A6403FA41D71A4E200C525AC /* Foundation.framework in Frameworks */,
@@ -303,6 +306,7 @@
 		CF53E2E49A0A5FD2A817A19F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A62EDBB91D830F1600CFF078 /* MessageUI.framework */,
 				A6B8B7191D745434009F6668 /* AVFoundation.framework */,
 				A6403F8A1D718BBE00C525AC /* CoreAudio.framework */,
 				A6403F881D718BB500C525AC /* AudioToolbox.framework */,
