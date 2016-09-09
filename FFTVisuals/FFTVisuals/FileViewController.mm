@@ -102,6 +102,7 @@
     [super viewWillDisappear:animated];
     
     if(self.isPlayingAudio)[self stopAudioFile];
+    if(self.isPlayingMIDI)[self stopMIDIFile];
 }
 
 
