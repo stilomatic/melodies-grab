@@ -68,7 +68,7 @@
     [self.audioPlayBtn addTarget:self action:@selector(audioPlayHandler) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:self.audioPlayBtn];
 
-    [self.midiPlayBtn setTitle:@"" forState:UIControlStateNormal];
+    [self.midiPlayBtn setTitle:@"MIDI" forState:UIControlStateNormal];
     [self.midiPlayBtn addTarget:self action:@selector(midiPlayHandler) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:self.midiPlayBtn];
 
@@ -91,7 +91,13 @@
     return YES;
 }
 
--(void)audioPlayHandler{
+-(void)audioPlayHandler
+{
+    
+    if(self.isPlayingMIDI)
+    {
+        [self stopMIDIFile];
+    }
     
      if (self.isPlayingAudio) {
          [self stopAudioFile];
@@ -101,15 +107,14 @@
          self.audioPlayBtn.selected = YES;
      }
     self.isPlayingAudio = !self.isPlayingAudio;
-    
-    if(self.isPlayingMIDI)
-    {
-        [self stopMIDIFile];
-    }
 }
 
 -(void)midiPlayHandler
 {
+    if(self.isPlayingAudio)
+    {
+        [self stopAudioFile];
+    }
     
     if (self.isPlayingMIDI) {
         [self stopMIDIFile];
@@ -117,10 +122,7 @@
         [self playMIDIFile];
     }
     self.isPlayingMIDI = !self.isPlayingMIDI;
-    if(self.isPlayingAudio)
-    {
-        [self stopAudioFile];
-    }
+
 }
 
 -(void)playAudioFile
@@ -150,7 +152,9 @@
     NSURL *file = [NSURL fileURLWithPath:self.metadata[kMetaDataMIDIFile]];
     NSError *error = nil;
     MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
+     MusicTimeStamp endTime =  sequence.length;
     self.sequencer = [MIKMIDISequencer sequencerWithSequence:sequence];
+    [self.sequencer setLoopStartTimeStamp:0 endTimeStamp:endTime];
     [self.sequencer startPlayback];
 }
 
