@@ -274,7 +274,7 @@
     }
 }
 
-+(uint8_t)midi:(float)freq
++(UInt8)midi:(float)freq
 {
     return (log(freq) - log(440.0)) / log(2) * 12 + 69;
 }

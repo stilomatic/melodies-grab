@@ -14,7 +14,7 @@
 		A63D5ECF1D73640400ACD42E /* FileViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A63D5ECE1D73640400ACD42E /* FileViewController.mm */; };
 		A6403F5D1D71880C00C525AC /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F5C1D71880C00C525AC /* main.mm */; };
 		A6403F601D71880C00C525AC /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F5F1D71880C00C525AC /* AppDelegate.mm */; };
-		A6403F631D71880C00C525AC /* GrabViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F621D71880C00C525AC /* GrabViewController.mm */; };
+		A6403F631D71880C00C525AC /* GrabViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6403F621D71880C00C525AC /* GrabViewController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A6403F661D71880C00C525AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6403F641D71880C00C525AC /* Main.storyboard */; };
 		A6403F681D71880C00C525AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6403F671D71880C00C525AC /* Assets.xcassets */; };
 		A6403F6B1D71880C00C525AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6403F691D71880C00C525AC /* LaunchScreen.storyboard */; };

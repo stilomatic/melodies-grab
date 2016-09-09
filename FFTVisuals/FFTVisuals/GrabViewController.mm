@@ -84,10 +84,13 @@
 {
     self.isWorking = !self.isWorking;
     if(self.isWorking){
-        self.noteCount++;
+        self.noteCount = 0;
         NSError *error = nil;
         MIKMIDISequence *sequence = [[MIKMIDISequence alloc] init];
-        self.currentTrack = [sequence addTrackWithError:&error];
+        self.currentTrack = [[sequence addTrackWithError:&error] retain];
+        
+        NSLog(@"CREATE MIDI SEQ &error %@",error.description);
+        
         self.currentMetadata = [[FileManager sharedInstance] prepareAudioFile];
         [self.au start:self.currentMetadata[kMetaDataAUDIOFile]];
         self.filesButton.hidden = YES;
@@ -98,10 +101,11 @@
         self.noteLabel.text = @"REC";
         [self.spk initSpektrum];
         NSError *error = nil;
-        [self.currentTrack.sequence writeToURL:[NSURL URLWithString:self.currentMetadata[kMetaDataMIDIFile]] error:&error];
+        [self.currentTrack.sequence writeToURL:[NSURL fileURLWithPath:self.currentMetadata[kMetaDataMIDIFile]] error:&error];
         if(error){
             NSLog(@"CANT SAVE MIDI FILE: %@",error.description);
         }
+        [self.currentTrack release];
     }
 
     [self.graph initGraph];
@@ -116,12 +120,13 @@
 -(void)getNote:(float)freq
 {
     self.frequencyLabel.text = [NSString stringWithFormat:@"tap to stop\n%1.2fHz\n=",freq];
-    uint8_t midiNote = [Converter midi:freq];
+    UInt8 midiNote = [Converter midi:freq];
     NSLog(@"MIDI NOTE::: %ld",(long)midiNote);
     self.noteLabel.text = [Converter note:midiNote];
     [self.graph update:freq];
     MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:127 duration:0.5 channel:0];
     [self.currentTrack addEvent:note];
+    self.noteCount++;
 }
 
 -(void)getSpektrum:(NSArray *)spekturm
@@ -133,5 +138,6 @@
 {
     [self performSegueWithIdentifier:@"filesSegueIn" sender:nil];
 }
+
 
 @end

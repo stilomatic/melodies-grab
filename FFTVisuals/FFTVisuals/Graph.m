@@ -33,7 +33,7 @@
 {
     self.frame = CGRectMake(self.superview.bounds.size.width - (self.count * W), 0.0, 100000, self.superview.bounds.size.height);
     
-    CGRect dotFrame = CGRectMake((self.count * W), self.superview.bounds.size.height - SCALE_VALUE(freq, self.bounds.size.height) - 20, W, W);
+    CGRect dotFrame = CGRectMake((self.count * W), self.superview.bounds.size.height - SCALE_VALUE(freq, self.bounds.size.height) - 26, W, W);
     UIView *tmpView = [[UIView alloc] initWithFrame:dotFrame];
     tmpView.backgroundColor = UIRandomColor;
     [self addSubview:tmpView];

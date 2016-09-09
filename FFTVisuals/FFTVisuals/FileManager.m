@@ -82,7 +82,7 @@
     NSString *directory = [self fileDirectory];
     
     NSString *filePath = [directory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@",AUDIO,[fileName stringByAppendingString:@".wav"]]];
-    NSString *midifilePath = [directory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@",MIDI,[fileName stringByAppendingString:@".MID"]]];
+    NSString *midifilePath = [directory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@",MIDI,[fileName stringByAppendingString:@".mid"]]];
     NSString *metadataFilePath = [directory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@",METADATA,[fileName stringByAppendingString:@".dic"]]];
     NSDictionary *outMetadata = @{kMetaDataTitle:[NSString stringWithFormat:@"Melody #%ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"filesCount"]],
                         kMetaDataDate:[self formattedDate:fileName],

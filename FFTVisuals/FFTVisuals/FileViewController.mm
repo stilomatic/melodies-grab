@@ -12,19 +12,28 @@
 #import "FileManager.h"
 #import "PlayerProgress.h"
 #import "Global.h"
+#import <MIKMIDI.h>
 
 @interface FileViewController()<UITextFieldDelegate>
 
 @property (nonatomic,strong) PlayerProgress *progresAudioView;
 @property (nonatomic,strong) IBOutlet UIButton *audioPlayBtn;
+@property (nonatomic,strong) IBOutlet UIButton *midiPlayBtn;
 @property (nonatomic,strong) AVAudioPlayer *audioPlayer;
-@property (nonatomic) BOOL isPlayingAudio;
 @property (nonatomic,strong) NSTimer *audioProgressTimer;
+@property (nonatomic,strong) MIKMIDISequencer *sequencer;
+
+@property (nonatomic) BOOL isPlayingAudio;
+@property (nonatomic) BOOL isPlayingMIDI;
 
 -(void)audioPlayHandler;
 -(void)playAudioFile;
 -(void)stopAudioFile;
 -(void)updateAudioProgress:(NSTimer*)timer;
+
+-(void)midiPlayHandler;
+-(void)playMIDIFile;
+-(void)stopMIDIFile;
 
 @end
 
@@ -57,9 +66,12 @@
     
     [self.audioPlayBtn setTitle:@"" forState:UIControlStateNormal];
     [self.audioPlayBtn addTarget:self action:@selector(audioPlayHandler) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.audioPlayBtn];
     [self.view bringSubviewToFront:self.audioPlayBtn];
-    
+
+    [self.midiPlayBtn setTitle:@"" forState:UIControlStateNormal];
+    [self.midiPlayBtn addTarget:self action:@selector(midiPlayHandler) forControlEvents:UIControlEventTouchUpInside];
+    [self.view bringSubviewToFront:self.midiPlayBtn];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -89,6 +101,26 @@
          self.audioPlayBtn.selected = YES;
      }
     self.isPlayingAudio = !self.isPlayingAudio;
+    
+    if(self.isPlayingMIDI)
+    {
+        [self stopMIDIFile];
+    }
+}
+
+-(void)midiPlayHandler
+{
+    
+    if (self.isPlayingMIDI) {
+        [self stopMIDIFile];
+    } else {
+        [self playMIDIFile];
+    }
+    self.isPlayingMIDI = !self.isPlayingMIDI;
+    if(self.isPlayingAudio)
+    {
+        [self stopAudioFile];
+    }
 }
 
 -(void)playAudioFile
@@ -112,6 +144,23 @@
     [self.progresAudioView setPercent:percent];
     [self.progresAudioView setNeedsDisplay];
 }
+
+-(void)playMIDIFile
+{
+    NSURL *file = [NSURL fileURLWithPath:self.metadata[kMetaDataMIDIFile]];
+    NSError *error = nil;
+    MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
+    self.sequencer = [MIKMIDISequencer sequencerWithSequence:sequence];
+    [self.sequencer startPlayback];
+}
+
+-(void)stopMIDIFile
+{
+    [self.sequencer stop];
+    self.sequencer = nil;
+}
+
+
 
 
 
