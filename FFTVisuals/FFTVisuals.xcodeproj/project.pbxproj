@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62EDBB81D82F79F00CFF078 /* MIDIGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = A62EDBB71D82F79F00CFF078 /* MIDIGraph.m */; };
 		A63D5EC21D73177B00ACD42E /* FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */; };
 		A63D5EC71D73181B00ACD42E /* CustomSlideInSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC41D73181B00ACD42E /* CustomSlideInSegue.m */; };
 		A63D5EC81D73181B00ACD42E /* CustomSlideOutSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A63D5EC61D73181B00ACD42E /* CustomSlideOutSegue.m */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		4DA13F15D054B315084AA088 /* Pods-melodies grab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-melodies grab.release.xcconfig"; path = "../Pods/Target Support Files/Pods-melodies grab/Pods-melodies grab.release.xcconfig"; sourceTree = "<group>"; };
 		504986BE03A0ACFEADB64DCF /* libPods-melodies grab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-melodies grab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62EDBB61D82F79F00CFF078 /* MIDIGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIGraph.h; sourceTree = "<group>"; };
+		A62EDBB71D82F79F00CFF078 /* MIDIGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIGraph.m; sourceTree = "<group>"; };
 		A63D5EC01D73177B00ACD42E /* FilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilesTableViewController.h; sourceTree = "<group>"; };
 		A63D5EC11D73177B00ACD42E /* FilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilesTableViewController.m; sourceTree = "<group>"; };
 		A63D5EC31D73181B00ACD42E /* CustomSlideInSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideInSegue.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				A6403FB01D71B82C00C525AC /* Spektrum.m */,
 				A65C363E1D7432130055E9B2 /* PlayerProgress.h */,
 				A65C363F1D7432130055E9B2 /* PlayerProgress.m */,
+				A62EDBB61D82F79F00CFF078 /* MIDIGraph.h */,
+				A62EDBB71D82F79F00CFF078 /* MIDIGraph.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				A6403FB11D71B82C00C525AC /* Spektrum.m in Sources */,
 				A6403FAA1D71A55D00C525AC /* mo_audio.mm in Sources */,
 				A6403F971D71942400C525AC /* FFTHelper.mm in Sources */,
+				A62EDBB81D82F79F00CFF078 /* MIDIGraph.m in Sources */,
 				A6403F631D71880C00C525AC /* GrabViewController.mm in Sources */,
 				A63D5ECC1D73377E00ACD42E /* FileManager.m in Sources */,
 				A6403F601D71880C00C525AC /* AppDelegate.mm in Sources */,

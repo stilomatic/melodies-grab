@@ -129,14 +129,16 @@ void AudioCallback( Float32 * buffer, UInt32 frameSize, void * userData )
         Float32 maxHZ = strongestFrequencyHZ(dataAccumulator, fftConverter, accumulatorDataLenght, &maxHZValue);
         
         NSMutableArray *fft = [NSMutableArray new];
-        
+        BOOL isNote = NO;
         for (int i  = 0; i < FRAMESIZE; i++){
-            [fft addObject:[NSNumber numberWithFloat:fftData[i] * SAMPLE_RATE * SAMPLE_SCALE]];
+            float value = fftData[i] * SAMPLE_RATE * SAMPLE_SCALE;
+            [fft addObject:[NSNumber numberWithFloat:value]];
+            if(value > 100)isNote = YES;
         }
         
         //NSLog(@" max HZ = %0.3f ", maxHZ);
         dispatch_async(dispatch_get_main_queue(), ^{ //update UI only on main thread
-                [mdelegate getNote:maxHZ];
+                if(isNote)[mdelegate getNote:maxHZ];
                 [mdelegate getSpektrum:fft];
         });
         

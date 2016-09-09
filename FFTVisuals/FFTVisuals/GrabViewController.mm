@@ -27,6 +27,9 @@
 @property(nonatomic,strong) NSDictionary *currentMetadata;
 @property(nonatomic,strong) MIKMIDITrack *currentTrack;
 @property(nonatomic) NSInteger noteCount;
+@property(nonatomic) NSInteger currentNote;
+@property(nonatomic,strong) NSDate *startNote;
+@property(nonatomic,strong) NSDate *endNote;
 
 @property(nonatomic) BOOL isWorking;
 
@@ -89,6 +92,7 @@
         MIKMIDISequence *sequence = [[MIKMIDISequence alloc] init];
         self.currentTrack = [[sequence addTrackWithError:&error] retain];
         
+        self.startNote = [NSDate date];
         NSLog(@"CREATE MIDI SEQ &error %@",error.description);
         
         self.currentMetadata = [[FileManager sharedInstance] prepareAudioFile];
@@ -119,14 +123,29 @@
 
 -(void)getNote:(float)freq
 {
+    NSLog(@"freq: %f",freq);
     self.frequencyLabel.text = [NSString stringWithFormat:@"tap to stop\n%1.2fHz\n=",freq];
     UInt8 midiNote = [Converter midi:freq];
     NSLog(@"MIDI NOTE::: %ld",(long)midiNote);
     self.noteLabel.text = [Converter note:midiNote];
     [self.graph update:freq];
-    MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:127 duration:0.7 channel:0];
-    [self.currentTrack addEvent:note];
+    
+    self.endNote = [NSDate date];
+    NSTimeInterval seconds = [self.endNote timeIntervalSinceDate:self.startNote];
+    //if(midiNote != self.currentNote){
+       
+        NSLog(@"MIDI NOTETIME::: %f",seconds);
+        MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:60 duration:seconds channel:0];
+        [self.currentTrack addEvent:note];
+        self.currentNote = midiNote;
+    /*}else{
+        MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:0 velocity:0 duration:seconds channel:0];
+        [self.currentTrack addEvent:note];
+    }*/
+    
+    self.startNote = [NSDate date];
     self.noteCount++;
+
 }
 
 -(void)getSpektrum:(NSArray *)spekturm

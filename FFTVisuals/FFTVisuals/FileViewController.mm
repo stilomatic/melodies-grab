@@ -12,6 +12,7 @@
 #import "FileManager.h"
 #import "PlayerProgress.h"
 #import "Global.h"
+#import "MIDIGraph.h"
 #import <MIKMIDI.h>
 
 @interface FileViewController()<UITextFieldDelegate>
@@ -22,6 +23,7 @@
 @property (nonatomic,strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic,strong) NSTimer *audioProgressTimer;
 @property (nonatomic,strong) MIKMIDISequencer *sequencer;
+@property (nonatomic,strong) MIDIGraph *graph;
 
 @property (nonatomic) BOOL isPlayingAudio;
 @property (nonatomic) BOOL isPlayingMIDI;
@@ -45,7 +47,9 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
+   // self.view.translatesAutoresizingMaskIntoConstraints = NO;
     self.isPlayingAudio = NO;
+    self.isPlayingMIDI = NO;
     
     NSString *soundFilePath = self.metadata[kMetaDataAUDIOFile];
     NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -68,9 +72,19 @@
     [self.audioPlayBtn addTarget:self action:@selector(audioPlayHandler) forControlEvents:UIControlEventTouchUpInside];
     [self.view bringSubviewToFront:self.audioPlayBtn];
 
-    [self.midiPlayBtn setTitle:@"MIDI" forState:UIControlStateNormal];
+    [self.midiPlayBtn setTitle:@"PLAY MIDI" forState:UIControlStateNormal];
     [self.midiPlayBtn addTarget:self action:@selector(midiPlayHandler) forControlEvents:UIControlEventTouchUpInside];
+    //[self.view bringSubviewToFront:self.midiPlayBtn];
+    
+    self.graph = [[MIDIGraph alloc] initWithFrame:CGRectMake((self.view.bounds.size.width * 0.5)+(((self.view.bounds.size.width * 0.5) - 260)/2), 80, 260, 260)];
+    [self.view addSubview:self.graph];
     [self.view bringSubviewToFront:self.midiPlayBtn];
+    
+    NSURL *file = [NSURL fileURLWithPath:self.metadata[kMetaDataMIDIFile]];
+    NSError *error = nil;
+    MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
+    MIKMIDITrack *currentTrack = [sequence.tracks firstObject];
+    [self.graph update:currentTrack.events];
 
 }
 
