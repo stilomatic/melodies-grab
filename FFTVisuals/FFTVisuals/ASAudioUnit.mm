@@ -170,10 +170,15 @@ void AudioCallback( Float32 * buffer, UInt32 frameSize, void * userData )
     if (!result) { NSLog(@" MoAudio start ERROR"); }
 }
 
+-(void)start
+{
+
+}
+
 -(void)start:(NSString*)filePath
 {
     MoAudio::initRecording(filePath);
-    [self initMomuAudio];
+        [self initMomuAudio];
 }
 
 -(void)stop

@@ -87,6 +87,7 @@
     MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
     MIKMIDITrack *currentTrack = [sequence.tracks firstObject];
     [self.graph update:currentTrack.events];
+    [self.view sendSubviewToBack:self.graph];
     
     UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(self.view.bounds.size.width * 0.5, self.view.bounds.size.height - 44, self.view.bounds.size.width * 05, 44);

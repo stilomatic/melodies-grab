@@ -81,6 +81,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    [self.au start];
 }
 
 -(void)tap:(UIGestureRecognizer*)gesture

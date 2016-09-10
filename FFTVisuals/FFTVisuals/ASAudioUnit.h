@@ -20,5 +20,6 @@
 -(id)initWithDelegate:(id<ASAudioUnitDelegate>)delegate;
 -(void)stop;
 -(void)start:(NSString*)filePath;
+-(void)start;
 
 @end

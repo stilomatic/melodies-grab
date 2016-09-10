@@ -337,10 +337,11 @@ static OSStatus SMALLRenderProc(
     // convert
     //convertToUser( ioData, MoAudio::m_info->m_ioBuffer, MoAudio::m_info->m_bufferSize, actualFrames );
     convertToUser2( ioData, MoAudio::m_info->m_ioBuffer, MoAudio::m_info->m_bufferSize, actualFrames );
-    if(is_recording)
+    if(is_recording){
         recordingCallback(inRefCon,ioActionFlags, inTimeStamp, kInputBus, inNumberFrames, ioData);
     // callback
     MoAudio::m_callback( MoAudio::m_info->m_ioBuffer, actualFrames, MoAudio::m_bindle );
+    }
     
     // convert back
     //convertFromUser( ioData, MoAudio::m_info->m_ioBuffer, MoAudio::m_info->m_bufferSize );
