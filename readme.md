@@ -17,3 +17,5 @@
 - Run
 
 ### Soon will be availabale on the App store for free
+
+*This project take advantage of the [MIKMIDI](https://github.com/mixedinkey-opensource/MIKMIDI) library for Midi file playback*
