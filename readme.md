@@ -4,7 +4,7 @@
 
 *Tap and sing… do you sing well? do you have created a nice melody and you want to test it and use it in Protools, Logic, GarageBand?*
 
-*Send and email and shear: import the MIDI file then you can change instrument and rhythm.*
+*Send and email and share: import the MIDI file then you can change instrument and rhythm.*
 
 ##This app allow you to record audio from the microphone and convert it in MIDI.
 
