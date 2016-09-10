@@ -120,6 +120,7 @@
     
     if(self.isPlayingMIDI)
     {
+        self.isPlayingMIDI = NO;
         [self stopMIDIFile];
     }
     
@@ -137,6 +138,7 @@
 {
     if(self.isPlayingAudio)
     {
+        self.isPlayingAudio = NO;
         [self stopAudioFile];
     }
     
