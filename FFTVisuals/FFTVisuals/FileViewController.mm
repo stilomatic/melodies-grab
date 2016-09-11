@@ -80,7 +80,7 @@
     [self.midiPlayBtn setTitle:@"PLAY MIDI" forState:UIControlStateNormal];
     [self.midiPlayBtn addTarget:self action:@selector(midiPlayHandler) forControlEvents:UIControlEventTouchUpInside];
     
-    self.graph = [[MIDIGraph alloc] initWithFrame:CGRectMake((self.view.bounds.size.width * 0.5)+(((self.view.bounds.size.width * 0.5) - 260)/2), 80, 260, 260)];
+    self.graph = [[MIDIGraph alloc] initWithFrame:CGRectMake((self.view.bounds.size.width * 0.5)+(((self.view.bounds.size.width * 0.5) - 260)/2), 80, 260, self.view.bounds.size.height - 130)];
     [self.view addSubview:self.graph];
     [self.view bringSubviewToFront:self.midiPlayBtn];
     
