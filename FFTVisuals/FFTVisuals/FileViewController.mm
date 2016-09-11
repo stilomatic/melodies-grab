@@ -24,6 +24,8 @@
 @property (nonatomic,strong) IBOutlet UIButton *midiPlayBtn;
 @property (nonatomic,strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic,strong) NSTimer *audioProgressTimer;
+@property (nonatomic,strong) NSTimer *midiProgressTimer;
+@property (nonatomic,strong) MIKMIDISequence *sequence;
 @property (nonatomic,strong) MIKMIDISequencer *sequencer;
 @property (nonatomic,strong) MIDIGraph *graph;
 
@@ -174,20 +176,29 @@
     [self.progresAudioView setNeedsDisplay];
 }
 
+-(void)updateMIDIProgress:(NSTimer*)timer
+{
+
+    if(self.sequencer.currentTimeStamp >= self.sequence.durationInSeconds - 0.0001){
+        [self.sequencer startPlayback];
+    }
+}
+
 -(void)playMIDIFile
 {
     NSURL *file = [NSURL fileURLWithPath:self.metadata[kMetaDataMIDIFile]];
     NSError *error = nil;
-    MIKMIDISequence *sequence = [MIKMIDISequence sequenceWithFileAtURL:file error:&error];
-    self.sequencer = [MIKMIDISequencer sequencerWithSequence:sequence];
-    [self.sequencer setLoopStartTimeStamp:0 endTimeStamp:sequence.tracks.firstObject.events.count];
-    [self.sequencer startPlayback];
+    self.midiProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateMIDIProgress:) userInfo:nil repeats:YES];
+    self.sequence = [[MIKMIDISequence alloc]initWithFileAtURL:file error:&error];
+    self.sequencer = [MIKMIDISequencer sequencerWithSequence:self.sequence];
+    [self.sequencer startPlaybackAtTimeStamp:0];
 }
 
 -(void)stopMIDIFile
 {
     [self.sequencer stop];
     self.sequencer = nil;
+    [self.midiProgressTimer invalidate];
 }
 
 -(void)shareBtnHandler

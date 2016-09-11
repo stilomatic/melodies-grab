@@ -126,7 +126,7 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    formatter.dateFormat = @"ddMMMyy_hhmmssSSSa";
+    formatter.dateFormat = @"ddMMMyy_HHmmssSSS";
     return  [formatter stringFromDate:[NSDate date]];
 }
 
@@ -134,7 +134,7 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    formatter.dateFormat = @"ddMMMyy_hhmmssSSSa";
+    formatter.dateFormat = @"ddMMMyy_HHmmssSSS";
     NSDateFormatter *outformatter = [[NSDateFormatter alloc] init];
     [outformatter setLocale:[NSLocale currentLocale]];
     outformatter.timeStyle = NSDateFormatterMediumStyle;
