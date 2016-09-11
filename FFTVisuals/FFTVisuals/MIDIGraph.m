@@ -34,8 +34,6 @@
         MIKMIDINoteEvent *event = (MIKMIDINoteEvent*)events[i];
         float height = (event.frequency / 1000.0) * self.bounds.size.height;
         float width = (i * W);
-        NSLog(@"MIDIEVENT %@",event);
-        NSLog(@"MIDIEVENT %f - %f",width,height);
         CGRect dotFrame = CGRectMake(width, (self.bounds.size.height - height) * 0.5, W, height);
         UIView *tmpView = [[UIView alloc] initWithFrame:dotFrame];
         tmpView.backgroundColor = UIRandomColor;

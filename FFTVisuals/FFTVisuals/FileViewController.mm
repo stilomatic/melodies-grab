@@ -207,9 +207,9 @@
     NSData *wavData = [NSData dataWithContentsOfFile:self.metadata[kMetaDataAUDIOFile]];
     NSData *midiData = [NSData dataWithContentsOfFile:self.metadata[kMetaDataMIDIFile]];
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-    [mailController setSubject:self.metadata[kMetaDataTitle]];
-    [mailController setMessageBody:@"This file was generated using iPhone App melodies-grabber"
-                             isHTML:NO];
+    [mailController setSubject:[NSString stringWithFormat:@"%@ %@",self.metadata[kMetaDataTitle],self.metadata[kMetaDataDate]]];
+    [mailController setMessageBody:@"<p>This file was generated using iPhone App melodies grab:</p><a href:\"http://www.stilo-studio.com/?p=569\">SUPPORT!</a>"
+                             isHTML:YES];
     [mailController addAttachmentData:midiData mimeType:@"audio/midi" fileName:[NSString stringWithFormat:@"%@.mid",self.metadata[kMetaDataTitle]]];
     [mailController addAttachmentData:wavData mimeType:@"audio/wav" fileName:[NSString stringWithFormat:@"%@.wav",self.metadata[kMetaDataTitle]]];
     mailController.mailComposeDelegate = self;
