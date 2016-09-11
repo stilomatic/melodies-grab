@@ -11,5 +11,6 @@
 @interface MIDIGraph : UIView
 
 -(void)update:(NSArray*)events;
+-(void)playView:(NSInteger)index;
 
 @end

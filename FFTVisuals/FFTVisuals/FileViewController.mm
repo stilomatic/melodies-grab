@@ -179,7 +179,8 @@
 -(void)updateMIDIProgress:(NSTimer*)timer
 {
 
-    if(self.sequencer.currentTimeStamp >= self.sequence.durationInSeconds - 0.0001){
+    [self.graph playView:(NSInteger)self.sequencer.currentTimeStamp];
+    if(self.sequencer.currentTimeStamp == self.sequence.length){
         [self.sequencer startPlayback];
     }
 }
@@ -191,7 +192,7 @@
     self.midiProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateMIDIProgress:) userInfo:nil repeats:YES];
     self.sequence = [[MIKMIDISequence alloc]initWithFileAtURL:file error:&error];
     self.sequencer = [MIKMIDISequencer sequencerWithSequence:self.sequence];
-    [self.sequencer startPlaybackAtTimeStamp:0];
+    [self.sequencer startPlayback];
 }
 
 -(void)stopMIDIFile
