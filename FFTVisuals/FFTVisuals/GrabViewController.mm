@@ -27,7 +27,6 @@
 @property(nonatomic,strong) NSDictionary *currentMetadata;
 @property(nonatomic,strong) MIKMIDITrack *currentTrack;
 @property(nonatomic) NSInteger noteCount;
-@property(nonatomic) NSInteger currentNote;
 @property(nonatomic,strong) NSDate *startNote;
 @property(nonatomic,strong) NSDate *endNote;
 
@@ -133,16 +132,10 @@
     
     self.endNote = [NSDate date];
     NSTimeInterval seconds = [self.endNote timeIntervalSinceDate:self.startNote];
-    //if(midiNote != self.currentNote){
        
-        NSLog(@"MIDI NOTETIME::: %f",seconds);
-        MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:60 duration:seconds channel:0];
-        [self.currentTrack addEvent:note];
-        self.currentNote = midiNote;
-    /*}else{
-        MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:0 velocity:0 duration:seconds channel:0];
-        [self.currentTrack addEvent:note];
-    }*/
+    NSLog(@"MIDI NOTETIME::: %f",seconds);
+    MIKMIDINoteEvent *note = [MIKMIDINoteEvent noteEventWithTimeStamp:self.noteCount note:midiNote velocity:60 duration:seconds channel:0];
+    [self.currentTrack addEvent:note];
     
     self.startNote = [NSDate date];
     self.noteCount++;

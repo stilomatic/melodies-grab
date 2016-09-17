@@ -276,7 +276,7 @@
 
 +(UInt8)midi:(float)freq
 {
-    return (log(freq) - log(440.0)) / log(2) * 12 + 57;
+    return (log(freq) - log(440.0)) / log(2) * 12 + 69;
 }
 
 @end
