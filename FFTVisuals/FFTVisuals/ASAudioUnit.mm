@@ -16,11 +16,12 @@
 UInt32 inNumberFrames = 0;
 
 /// Nyquist Maximum Frequency
-const Float32 NyquistMaxFreq = SAMPLE_RATE/2.0;
+const Float32 NyquistMaxFreq = SAMPLE_RATE;
 
 /// caculates HZ value for specified index from a FFT bins vector
 Float32 frequencyHerzValue(long frequencyIndex, long fftVectorSize, Float32 nyquistFrequency ) {
-    return ((Float32)frequencyIndex/(Float32)fftVectorSize) * nyquistFrequency;
+    //return ((Float32)frequencyIndex/(Float32)fftVectorSize) * nyquistFrequency;
+    return ((Float32)frequencyIndex/nyquistFrequency)*(Float32)fftVectorSize;
 }
 
 

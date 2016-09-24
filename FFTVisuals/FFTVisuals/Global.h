@@ -21,5 +21,5 @@
 #define SAMPLE_SCALE 100000
 #define kOutputBus 0
 #define kInputBus 1
-#define DATA_LENGHT 16384 //16384; //32768; 65536; 131072;
+#define DATA_LENGHT 32768 //16384; //32768; 65536; 131072;
 #define SCALE_VALUE(a,b) ( a / 12544 ) * b
